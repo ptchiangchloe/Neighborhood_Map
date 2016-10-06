@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Neighborhood Map</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/knockout.js" type="text/javascript"></script>
+    <script src="js/map.js" defer="defer"></script>
+    <script src="js/app.js" defer="defer"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGI1Wwjh_aWBVeVaKQitXcXco83fkq7dE&callback=initMap " onerror="googleError()"async></script>
+    <script src="js/silderBar.js" defer="defer"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <nav class="topnav" id="myTopnav">
+        <li class="icon">
+            <div id="o-wrapper" class="o-wrapper">
+                <button id="c-button--slide-left" class="c-button">☰</button>
+            </div>
+        </li>
+        <li class="title">
+            FASHION DESTINATIONS <span id="title-location">IN SAN FRANCISCO DOWNTOWN</span><span id="title-location-sm">IN SF DOWNTOWN</span>
+        </li>
+    </nav>
+
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+        <button class="c-menu__close" id="c-menu__close">&larr; Close Menu</button>
+        <!-- this is a search box that you can do live search  -->
+        <div class="box">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input placeholder="Search…" id="search" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+            </div>
+        </div>
+
+        <ul class="c-menu__items" data-bind="template: {name:'brand', foreach: brands}"></ul>
+        <!-- http://knockoutjs.com/documentation/click-binding.html -->
+        <script type="text/html" id="brand">
+            <!-- <li class="c-menu__item" > -->
+            <li class="c-menu__item" data-bind="click: $root.displayBox">
+                <strong data-bind="text: name"></strong>
+            </li>
+        </script>
+    </nav>
+
+
+    <div id="map"></div>
+</body>
+
+</html>

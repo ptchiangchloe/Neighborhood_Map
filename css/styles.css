@@ -1,0 +1,234 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map {
+    height: 100%;
+}
+
+.c-menu__link {
+    text-decoration: none;
+}
+
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 25px;
+
+}
+.title {
+    display: inline-block;
+    color:#3184a1 ;
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-left: 30px;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+li,
+#o-wrapper {
+    display: inline;
+    height: 100%;
+}
+#c-button--slide-left {
+    text-align: center;
+    padding: 17px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    /*use cursor pointer indicates the part needs to be clicked*/
+}
+/**
+ * Close button resets.
+ */
+
+.c-menu__close:focus {
+    outline: none;
+}
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+
+body.has-active-menu {
+    overflow: hidden;
+}
+/**
+ * Mask component
+ */
+
+
+
+.c-menu--slide-left {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+@media all and (min-width: 320px) {
+    .c-menu--slide-left {
+        width: 300px;
+    }
+}
+#search-box {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}
+
+/*https://webdesign.tutsplus.com/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069*/
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#search{
+  width: 300px;
+  height: 40px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;
+}
+
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background: #ffffff;
+  }
+
+
+
+#pac-input:focus {
+    border-color: #DC143C;
+}
+.c-menu--slide-left .c-menu__item {
+    display: block;
+    text-align: center;
+    border-top: solid 1px #b5dbe9;
+    border-bottom: solid 1px #3184a1;
+    cursor: pointer;
+}
+.c-menu--slide-left .c-menu__item:first-child {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: none;
+}
+/*.c-menu--slide-left .c-menu__item:last-child {
+    border-bottom: none;
+}*/
+.c-menu--slide-left .c-menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #fff;
+}
+.c-menu--slide-left .c-menu__close {
+    display: block;
+    padding: 12px 24px;
+    width: 100%;
+}
+/*MarkerList LeftSlider*/
+
+.c-menu {
+    position: fixed;
+    z-index: 200;
+    background-color: #333;
+    transition: transform 0.3s;
+}
+.c-menu__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.c-menu--slide-left {
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+@media all and (min-width: 320px) {
+    .c-menu--slide-left {
+        transform: translateX(-300px);
+    }
+}
+.c-menu--slide-left.is-active {
+    transform: translateX(0);
+}
+/**
+ * Close button resets.
+ */
+
+.c-menu__close {
+    color: #fff;
+    background-color: #3184a1;
+    font-size: 14px;
+    border: none;
+    box-shadow: none;
+    border-radius: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+#title-location-sm{
+  display: none;
+}
+
+@media only screen and (max-width: 580px) {
+    #title-location{
+      display: none;
+    }
+    .c-menu--slide-left{
+      width: 50%;
+    }
+    #title-location-sm{
+      display: inline;
+    }
+}
